@@ -1,7 +1,8 @@
 import Foundation
 import RxSwift
+import Models
+import UseCases
 import RxRelay
-
 
 protocol HeroInfoViewModelInterface: AnyObject {
     var onShowLoadingHud: Observable<Bool> { get }

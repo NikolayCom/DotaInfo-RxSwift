@@ -1,14 +1,16 @@
 import RxSwift
+import Core
+import Models
 
-class HeroCoordinator: BaseCoordinator<Void> {
+public class HeroCoordinator: BaseCoordinator<Void> {
     
     let rootViewController: UIViewController
     
-    init(rootViewController: UIViewController) {
+    public init(rootViewController: UIViewController) {
         self.rootViewController = rootViewController
     }
     
-    override func start() -> Observable<Void> {
+    public override func start() -> Observable<Void> {
         let viewController = rootViewController as! HerousCollectionViewController
         let viewModel = viewController.viewModel
         

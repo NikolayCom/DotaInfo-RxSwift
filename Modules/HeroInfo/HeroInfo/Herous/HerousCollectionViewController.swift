@@ -2,14 +2,15 @@ import Foundation
 import UIKit
 import Then
 import RxSwift
-import RxSwiftExt
+// import RxSwiftExt
+import Extensions
 import PKHUD
 import SnapKit
 import RxDataSources
 
 // MARK: HerousCollectionViewController
 
-class HerousCollectionViewController: UIViewController {
+public class HerousCollectionViewController: UIViewController {
     private (set) var viewModel: HerousCollectionViewModelInterface
     
     private let disposeBag = DisposeBag()
@@ -36,7 +37,7 @@ class HerousCollectionViewController: UIViewController {
     }
     
     
-    init(viewModel: HerousCollectionViewModelInterface) {
+    public init(viewModel: HerousCollectionViewModelInterface) {
         self.viewModel = viewModel
         
         super.init(nibName: nil, bundle: nil)
@@ -46,7 +47,7 @@ class HerousCollectionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()

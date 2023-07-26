@@ -1,0 +1,37 @@
+## Strings
+
+  strings:
+    inputs:
+        - Modules/Resources/Resources/Localization/Localization/en.lproj
+    outputs:
+        - templateName: structured-swift5
+          output: Modules/Resources/Resources/Public/Strings.generated.swift
+          params:
+            enumName: S
+            publicAccess: true
+
+## Fonts
+
+  fonts:
+    inputs:
+     - BasicMusic/Resources/Fonts
+    outputs:
+     - templateName: swift5
+       output: Modules/Resources/Resources/Public/Fonts.generated.swift
+       params:
+         enumName: F
+         publicAccess: true
+
+## Colors/Images
+
+  xcassets:
+    inputs:
+     - Modules/Resources/Resources/Assets/Colors.xcassets
+     - Modules/Resources/Resources/Assets/Auth.images.xcassets
+     - Modules/Resources/Resources/Assets/Home.images.xcassets
+    outputs:
+     - templateName: swift5
+       output: Modules/Resources/Resources/Public/Assets.generated.swift
+       params:
+         enumName: A
+         publicAccess: true

@@ -2,11 +2,13 @@ import Foundation
 import RxRelay
 import RxSwift
 import RxDataSources
+import Models
+import UseCases
 
 
 // MARK: HerousCollectionViewModelInterface
 
-protocol HerousCollectionViewModelInterface: AnyObject {
+public protocol HerousCollectionViewModelInterface: AnyObject {
     var onShowLoadingHud: Observable<Bool> { get }
     var herousCells: Observable<[HeroSectionModel]> { get }
     
@@ -18,19 +20,19 @@ protocol HerousCollectionViewModelInterface: AnyObject {
 
 // MARK: HerousCollectionViewModel
 
-class HerousCollectionViewModel {
-    var herousCells: Observable<[HeroSectionModel]> {
+public class HerousCollectionViewModel {
+    public var herousCells: Observable<[HeroSectionModel]> {
         return cells
             .asObservable()
     }
     
-    var onShowLoadingHud: Observable<Bool> {
+    public var onShowLoadingHud: Observable<Bool> {
         return loadingInProgress
             .asObservable()
             .distinctUntilChanged()
     }
     
-    let selectHero = PublishSubject<Hero>()
+    public let selectHero = PublishSubject<Hero>()
     
     private let onShowError = PublishSubject<Any>()
     private let disposeBag = DisposeBag()
@@ -41,7 +43,7 @@ class HerousCollectionViewModel {
     private let loadingInProgress = BehaviorRelay(value: false)
     private let cells = BehaviorRelay<[HeroSectionModel]>(value: [])
     
-    init(appServerClient: AppServerClient) {
+    public init(appServerClient: AppServerClient) {
         self.appServerClient = appServerClient
     }
 }
@@ -49,11 +51,11 @@ class HerousCollectionViewModel {
 // MARK: HerousCollectionViewModel
 
 extension HerousCollectionViewModel: HerousCollectionViewModelInterface {
-    func loadView() {
+    public func loadView() {
         getFriends()
     }
     
-    func searchTextDidChange(with text: String) {
+    public func searchTextDidChange(with text: String) {
         let matchHerous = !text.isEmpty ? self.herous.filter({ $0.localizedName.lowercased().contains(text.lowercased()) }) : self.herous
         self.acceptCells(with: matchHerous)
     }

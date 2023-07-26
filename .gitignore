@@ -8,6 +8,7 @@ xcuserdata/
 *.xccheckout
 
 ## Xcode Patch
+*.xcodeproj
 *.xcworkspace
 
 # OS generated files #
@@ -20,12 +21,10 @@ ehthumbs.db
 Thumbs.db
 
 # Intermediate files
-fastlane/report.xml
-fastlane/README.md
-gems
 Pods/
 Podfile.lock
 
 # Generated files
 *.generated.swift*
+*.xcodeproj/*
 

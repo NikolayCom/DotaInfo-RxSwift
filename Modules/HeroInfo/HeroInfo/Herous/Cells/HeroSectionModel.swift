@@ -3,7 +3,7 @@ import RxDataSources
 
 // MARK: HeroSectionItem
 
-enum HeroSectionItem {
+public enum HeroSectionItem {
     case normal(cellViewModel: HeroCollectionViewCellModel)
     case error(message: String)
     case empty
@@ -11,7 +11,7 @@ enum HeroSectionItem {
 
 // MARK: HeroSectionModel
 
-enum HeroSectionModel {
+public enum HeroSectionModel {
     enum Section: String {
         case force = "str"
         case dexterity = "agi"
@@ -28,7 +28,7 @@ enum HeroSectionModel {
 // MARK: HeroSectionModel + SectionModelType
 
 extension HeroSectionModel: SectionModelType {
-    typealias Item = HeroSectionItem
+    public typealias Item = HeroSectionItem
     
     var title: String {
         switch self {
@@ -46,7 +46,7 @@ extension HeroSectionModel: SectionModelType {
         }
     }
     
-    var items: [HeroSectionItem] {
+    public var items: [HeroSectionItem] {
         switch self {
         case .force(let items):
             return items
@@ -65,7 +65,7 @@ extension HeroSectionModel: SectionModelType {
         }
     }
     
-    init(original: HeroSectionModel, items: [HeroSectionItem]) {
+    public init(original: HeroSectionModel, items: [HeroSectionItem]) {
         self = original
     }
 }

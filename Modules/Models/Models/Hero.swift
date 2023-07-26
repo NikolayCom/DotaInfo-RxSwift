@@ -1,37 +1,31 @@
-//
-//  Hero.swift
-//  DotaInfo
-//
-//  Created by Nikolay Pivnik on 8.07.23.
-//
-
 import Foundation
+import Core
 
-struct Hero: Decodable {
-    let id: Int
-    let name: String
-    let localizedName: String
-    let primaryAttr: String
-    let roles: [String]
+public struct Hero: Decodable {
+    public let id: Int
+    public let name: String
+    public let localizedName: String
+    public let primaryAttr: String
+    public let roles: [String]
     
-    let image: String
-    let icon: String
+    public let image: String
+    public let icon: String
     
-    let baseHealth: Int
-    let baseHealthRegen: Float
-    let baseMana: Int
+    public let baseHealth: Int
+    public let baseHealthRegen: Float
+    public let baseMana: Int
     
-    let baseStrenght: Int
-    let strenghtGain: Float
-    let baseAgility: Int
-    let agilityGain: Float
-    let baseIntelligence: Int
-    let intelligenceGain: Float
+    public let baseStrenght: Int
+    public let strenghtGain: Float
+    public let baseAgility: Int
+    public let agilityGain: Float
+    public let baseIntelligence: Int
+    public let intelligenceGain: Float
     
-    let moveSpeed: Int
+    public let moveSpeed: Int
     
-    let dayVision: Int
-    let nightVision: Int
+    public let dayVision: Int
+    public let nightVision: Int
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -55,16 +49,18 @@ struct Hero: Decodable {
         case intelligenceGain = "int_gain"
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        let baseUrl = Configuration.shared.baseUrl
+        
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
         self.localizedName = try container.decode(String.self, forKey: .localizedName)
         self.primaryAttr = try container.decode(String.self, forKey: .primaryAttr)
         self.roles = try container.decode([String].self, forKey: .roles)
         
-        self.image = try AppServerClient.baseUrl + container.decode(String.self, forKey: .image)
-        self.icon = try AppServerClient.baseUrl + container.decode(String.self, forKey: .icon)
+        self.image = try baseUrl + container.decode(String.self, forKey: .image)
+        self.icon = try baseUrl + container.decode(String.self, forKey: .icon)
         
         self.baseHealth = try container.decode(Int.self, forKey: .baseHealth)
         self.baseHealthRegen = try container.decode(Float.self, forKey: .baseHealthRegen)

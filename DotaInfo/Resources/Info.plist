@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<array>
+		<dict>
+			<key>artistName</key>
+			<string>Michael Jackson</string>
+			<key>albumName</key>
+			<string>THRILLER</string>
+			<key>songName</key>
+			<string>Billie Jean</string>
+			<key>albumArtwork</key>
+			<string>demo1.png</string>
+		</dict>
+		<dict>
+			<key>artistName</key>
+			<string>Michael Jackson</string>
+			<key>albumName</key>
+			<string>THRILLER</string>
+			<key>songName</key>
+			<string>Beat It</string>
+			<key>albumArtwork</key>
+			<string>demo2.jpg</string>
+		</dict>
+		<dict>
+			<key>artistName</key>
+			<string>Michael Jackson</string>
+			<key>albumName</key>
+			<string>THRILLER</string>
+			<key>songName</key>
+			<string>Baby Be Mine</string>
+			<key>albumArtwork</key>
+			<string>demo3.jpg</string>
+		</dict>
+	</array>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>&quot;Use microphone&quot;</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.basicmusic.appstore</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.909579456507-pbnvqtttkr33pml8ercpj0s3eohatdcb</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.basicmusic.debug</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.909579456507-o3ti4oct9j77pd6dte9uatb56mdjqjnc</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>String($(CURRENT_PROJECT_VERSION))</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Figtree-Bold.ttf</string>
+		<string>Figtree-ExtraBold.ttf</string>
+		<string>Figtree-Italic.ttf</string>
+		<string>Figtree-Medium.ttf</string>
+		<string>Figtree-Regular.ttf</string>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen.storyboard</string>
+</dict>
+</plist>
