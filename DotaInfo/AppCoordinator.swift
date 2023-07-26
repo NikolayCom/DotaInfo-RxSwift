@@ -1,4 +1,7 @@
 import RxSwift
+import UseCases
+import Core
+import HeroInfo
 // import ReactiveCoordinator
 
 class AppCoordinator: BaseCoordinator<Void> {

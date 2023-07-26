@@ -1,8 +1,9 @@
 import Foundation
 import RxSwift
 import Alamofire
+import Models
 
-class AppServerClient {
+public class AppServerClient {
     static let baseUrl = "https://api.opendota.com"
     
     private let disposeBag = DisposeBag()
@@ -29,6 +30,10 @@ class AppServerClient {
         }
     }
     
+    public init() {}
+}
+
+public extension AppServerClient {
     func getHerous() -> Observable<[Hero]> {
         return request(with: .heroStats)
     }

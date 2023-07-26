@@ -1,7 +1,7 @@
 import Foundation
 
 
-struct HeroPopularityItems: Decodable {
+public struct HeroPopularityItems: Decodable {
     let startGame: [String: Int]
     let earlyGame: [String: Int]
     let midGame: [String: Int]
@@ -14,7 +14,7 @@ struct HeroPopularityItems: Decodable {
         case lateGame = "late_game_items"
     }
     
-    func getHeroItems(with items: [Item]) -> SortedHeroItems {
+    public func getHeroItems(with items: [Item]) -> SortedHeroItems {
         .init(
             startGame: items.filter({ startGame.keys.map { Int($0) }.contains($0.id) }),
             earlyGame: items.filter({ earlyGame.keys.map { Int($0) }.contains($0.id) }),

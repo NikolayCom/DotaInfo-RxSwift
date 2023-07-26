@@ -1,0 +1,66 @@
+name: DotaInfo
+
+configs:
+    Debug: debug
+    AppStore: release
+
+options:
+    createIntermediateGroups: true
+    minimumXcodeGenVersion: 2.3.0
+    deploymentTarget:
+    iOS: 15.0
+    defaultConfig: Debug
+    groupSortPosition: top
+    generateEmptyDirectories: true
+
+targets:
+  DotaInfo:
+    type: application
+    platform: iOS
+    sources: [DotaInfo]
+    deploymentTarget: 15.0
+    settings:
+      base:
+        MARKETING_VERSION: '1.0.0'
+        INFOPLIST_FILE: DotaInfo/Resources/Info.plist
+        TARGETED_DEVICE_FAMILY: 1
+        CURRENT_PROJECT_VERSION: 1
+      configs:
+        Debug:
+          PRODUCT_BUNDLE_IDENTIFIER: com.dotainfo.debug
+          PRODUCT_NAME: DotaInfo
+          DISPLAY_NAME: "$(PRODUCT_NAME) $(CONFIGURATION)"
+        AppStore:
+          PRODUCT_BUNDLE_IDENTIFIER: com.dotainfo.appstore
+          PRODUCT_NAME: DotaInfo
+          DISPLAY_NAME: "$(PRODUCT_NAME) $(CONFIGURATION)"
+    preBuildScripts:
+      - name: swiftLint
+        script: |
+                ${PODS_ROOT}/SwiftLint/swiftlint --config swiftlint.yml
+                
+schemes:
+  Debug:
+    templates:
+    - ConfigBasedScheme
+    run:
+      config: Debug
+  AppStore:
+    templates:
+    - ConfigBasedScheme
+    run:
+      config: AppStore
+schemeTemplates:
+  ConfigBasedScheme:
+    build:
+      targets:
+        DotaInfo: all
+    run:
+      сonfig: "${scheme_name}"
+    profile:
+      config: "${scheme_name}"
+    analyze:
+      config: "${scheme_name}"
+    archive:
+      config: "${scheme_name}"
+

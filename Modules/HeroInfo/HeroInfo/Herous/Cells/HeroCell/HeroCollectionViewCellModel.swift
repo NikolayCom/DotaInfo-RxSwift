@@ -1,6 +1,7 @@
 import Foundation
+import Models
 
-struct HeroCollectionViewCellModel {
+public struct HeroCollectionViewCellModel {
     let id: Int
 
     let imageUrl: String
