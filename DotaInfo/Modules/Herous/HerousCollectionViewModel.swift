@@ -82,10 +82,10 @@ private extension HerousCollectionViewModel {
     func acceptCells(with items: [Hero]) {
         self.cells.accept(
             [
-                .force(items: getFilteredHerous(by: HeroSectionModel.Section.force, herous: items)),
-                .dexterity(items: getFilteredHerous(by: HeroSectionModel.Section.dexterity, herous: items)),
-                .intelligence(items: getFilteredHerous(by: HeroSectionModel.Section.intelligence, herous: items)),
-                .universal(items: getFilteredHerous(by: HeroSectionModel.Section.universal, herous: items)),
+                .force(items: getFilteredHerous(by: .force, herous: items)),
+                .dexterity(items: getFilteredHerous(by: .dexterity, herous: items)),
+                .intelligence(items: getFilteredHerous(by: .intelligence, herous: items)),
+                .universal(items: getFilteredHerous(by: .universal, herous: items)),
             ].filter( { !$0.items.isEmpty })
         )
     }
