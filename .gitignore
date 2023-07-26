@@ -21,10 +21,47 @@ ehthumbs.db
 Thumbs.db
 
 # Intermediate files
+fastlane/report.xml
+fastlane/README.md
+gems
 Pods/
 Podfile.lock
 
 # Generated files
 *.generated.swift*
 *.xcodeproj/*
+
+## Pods
+
+## User settings
+xcuserdata/
+
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+
+## Xcode Patch
+*.xcodeproj
+*.xcworkspace
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Intermediate files
+fastlane/report.xml
+fastlane/README.md
+gems
+Pods/
+Podfile.lock
+
+# Generated files
+*.generated.swift*
+*.xcodeproj/*
+
 

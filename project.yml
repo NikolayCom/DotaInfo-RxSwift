@@ -38,6 +38,14 @@ targets:
       - name: swiftLint
         script: |
                 ${PODS_ROOT}/SwiftLint/swiftlint --config swiftlint.yml
+  DotaInfoUnitTests:
+    type: bundle.unit-test
+    platform: iOS
+    settings:
+      base:
+        INFOPLIST_FILE: Tests/Info.plist
+    sources:
+    - Tests/UnitTests
                 
 schemes:
   Debug:
@@ -50,6 +58,7 @@ schemes:
     - ConfigBasedScheme
     run:
       config: AppStore
+      
 schemeTemplates:
   ConfigBasedScheme:
     build:
@@ -63,4 +72,10 @@ schemeTemplates:
       config: "${scheme_name}"
     archive:
       config: "${scheme_name}"
+    test:
+     gatherCoverageData: true
+     targets:
+     - name: DotaInfoUnitTests
+       parallelizable: true
+      
 
